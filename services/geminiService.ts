@@ -10,7 +10,6 @@ const analysisSchema: Schema = {
   properties: {
     movieTitle: { type: Type.STRING },
     synopsis: { type: Type.STRING },
-    posterUrl: { type: Type.STRING, description: "Direct URL of the official movie poster image." },
     trailerUrl: { type: Type.STRING, description: "YouTube URL of the official movie trailer found via search." },
     philosophicalThemes: { 
       type: Type.ARRAY,
@@ -44,7 +43,6 @@ export const analyzeMovie = async (movieName: string): Promise<PhilosophicalAnal
       model: 'gemini-3-pro-preview',
       contents: `Analiza la película "${movieName}" desde una perspectiva filosófica profunda y académica. 
       Genera una sinopsis.
-      Busca y proporciona el enlace URL directo a la imagen del póster oficial de la película.
       Busca y proporciona el enlace de YouTube al tráiler oficial de la película.
       Conéctala con autores filosóficos relevantes, sugiere temas y crea actividades escolares basadas en escenas específicas.
       El tono debe ser educativo pero cautivador.`,
@@ -83,7 +81,6 @@ export const analyzeMovieFromImage = async (imageBase64: string): Promise<Philos
           text: `Identifica qué película es la de la imagen. Si es una escena, identifica la película a la que pertenece.
           Luego, analiza la película identificada desde una perspectiva filosófica profunda y académica.
           Genera una sinopsis.
-          Busca y proporciona el enlace URL directo a la imagen del póster oficial de la película.
           Busca y proporciona el enlace de YouTube al tráiler oficial de la película.
           Conéctala con autores filosóficos relevantes, sugiere temas y crea actividades escolares basadas en escenas específicas.
           El tono debe ser educativo pero cautivador.`

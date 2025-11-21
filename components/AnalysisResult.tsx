@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { PhilosophicalAnalysis } from '../types';
-import { BookOpen, Users, BrainCircuit, Clapperboard, Sparkles, Share2, Youtube, Film } from 'lucide-react';
+import { BookOpen, Users, BrainCircuit, Clapperboard, Sparkles, Share2, Youtube } from 'lucide-react';
 
 interface AnalysisResultProps {
   data: PhilosophicalAnalysis;
@@ -58,29 +58,8 @@ const AnalysisResult: React.FC<AnalysisResultProps> = ({ data }) => {
       {/* Main Content Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         
-        {/* Left Column: Poster, Trailer, Synopsis & Authors */}
+        {/* Left Column: Trailer, Synopsis & Authors */}
         <div className="space-y-8">
-          
-          {/* Poster Section */}
-          <div className="bg-cinema-black border border-gold-900 p-2 rounded-lg shadow-[0_0_15px_rgba(212,175,55,0.1)] relative overflow-hidden group">
-            {data.posterUrl ? (
-              <img 
-                src={data.posterUrl} 
-                alt={data.movieTitle}
-                className="w-full h-auto rounded border border-gray-800 object-cover transition-transform duration-700 group-hover:scale-105"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                  e.currentTarget.nextElementSibling?.classList.remove('hidden');
-                }}
-              />
-            ) : null}
-            {/* Fallback if image fails or is missing */}
-            <div className={`poster-placeholder ${data.posterUrl ? 'hidden' : ''} w-full aspect-[2/3] flex flex-col items-center justify-center bg-gray-900 text-gold-600 rounded`}>
-               <Film size={48} className="mb-2 opacity-50" />
-               <span className="font-cinema text-sm">CineSofía</span>
-               <span className="text-xs text-gray-600 mt-1">Póster no disponible</span>
-            </div>
-          </div>
           
           {/* Trailer Section - Enhanced Cinema Style */}
           {embedUrl && (

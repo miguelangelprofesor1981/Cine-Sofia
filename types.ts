@@ -8,7 +8,6 @@ export interface Activity {
 export interface PhilosophicalAnalysis {
   movieTitle: string;
   synopsis: string;
-  posterUrl?: string;
   trailerUrl?: string;
   philosophicalThemes: string[];
   relatedAuthors: string[];
