@@ -1,0 +1,5 @@
+{
+  "name": "CineSofía - Cinema Filosófico",
+  "description": "Una aplicación de estilo Hollywoodense que analiza películas a través de una lente filosófica, generando sinopsis, conexiones con autores, actividades escolares y contenido multimedia utilizando Gemini AI.",
+  "requestFramePermissions": []
+}
